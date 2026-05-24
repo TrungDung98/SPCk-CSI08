@@ -5,178 +5,188 @@ from PIL import Image
 import time
 
 st.set_page_config(
-    page_title="web của dũng",
-    page_icon="#",
-    layout="wide",
-    initial_sidebar_state="expanded"
+    page_title="Card AI",
+    page_icon="🃏",
+    layout="wide"
 )
 
 st.markdown("""
-    <style>
-    .main-header {
-        font-size: 3rem;
-        font-weight: bold;
-        color: #0f172a;
-        text-align: center;
-        margin-bottom: 1rem;
-    }
-    .sub-header {
-        font-size: 1.5rem;
-        color: #ff7f0e;
-        text-align: center;
-        margin-bottom: 2rem;
-    }
-    .metric-card {
-    background-color: #1f77b4;
-    padding: 2rem;
-    border-radius: 15px;
-    color: white;
+<style>
+.main-header{
+    font-size: 42px;
+    font-weight: bold;
+    color: #1f2937;
     text-align: center;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    transition: 0.3s ease;
-    }
+    margin-bottom: 10px;
+}
 
-    .metric-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-    }
-    .feature-card {
-        background: white;
-        padding: 2rem;
-        border-radius: 10px;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        border-left: 5px solid #1f77b4;
-    }
-    .feature-card:hover {
-    transform: translateY(-3px);
-    transition: 0.3s;
-    }
-    .stApp {
-    background-color: #f5f7fb;
-    }
-    </style>
+.sub-text{
+    text-align:center;
+    color: gray;
+    margin-bottom: 30px;
+}
+
+.box{
+    background-color: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.metric-box{
+    background-color:#1f77b4;
+    color:white;
+    padding:20px;
+    border-radius:12px;
+    text-align:center;
+}
+
+.stApp{
+    background-color:#f5f7fa;
+}
+</style>
 """, unsafe_allow_html=True)
 
-col1, col2, col3 = st.columns([1, 2, 1])
-with col2:
-    st.markdown('<h1 class="main-header">Trang chủ</h1>', unsafe_allow_html=True)
-    st.markdown('<p class="sub-header">Web nóng</p>', unsafe_allow_html=True)
+# HEADER
+st.markdown(
+    "<div class='main-header'>🃏 Nhận diện lá bài bằng AI</div>",
+    unsafe_allow_html=True
+)
 
-# Banner với nút CTA
-banner_col1, banner_col2 = st.columns([2, 1])
-with banner_col1:
-    st.info("tìm hết cả kiếm")
-with banner_col2:
-    if st.button("hello world", type="primary", use_container_width=True):
-        st.balloons()
+st.markdown(
+    "<div class='sub-text'>Nhận diện lá bài bằng CNN và TensorFlow</div>",
+    unsafe_allow_html=True
+)
 
-st.markdown("---")
-st.markdown("<h2 style='text-align: center; color: #2E86AB;'>abc</h2>", unsafe_allow_html=True)
+left, right = st.columns([2,1])
 
-col1, col2, col3, col4 = st.columns(4)
-with col1:
-    st.markdown("""
-    <div class="metric-card">
-        <h2 style='font-size: 2.5rem;'>10 tỉ</h2>
-        <p>Người Dùng</p>
-    </div>
-    """, unsafe_allow_html=True)
-
-with col2:
-    st.markdown("""
-    <div class="metric-card">
-        <h2 style='font-size: 2.5rem;'>10000%</h2>
-        <p>Uptime</p>
-    </div>
-    """, unsafe_allow_html=True)
-
-with col3:
-    st.markdown("""
-    <div class="metric-card">
-        <h2 style='font-size: 2.5rem;'>2000 app</h2>
-        <p>Ứng Dụng</p>
-    </div>
-    """, unsafe_allow_html=True)
-
-with col4:
-    st.markdown("""
-    <div class="metric-card">
-        <h2 style='font-size: 2.5rem;'>khong ho tro</h2>
-        <p>Hỗ Trợ</p>
-    </div>
-    """, unsafe_allow_html=True)
-
-st.markdown("---")
-st.markdown("<h2 style='text-align: center; color: #2E86AB;'>tinh lang</h2>", unsafe_allow_html=True)
-
-features_data = [
-    {
-        "icon": "#",
-        "title": "Tốc Độ Cao",
-        "desc": "Xử lý dữ liệu nhanh chóng với hiệu suất tối ưu"
-    },
-    {
-        "icon": "#", 
-        "title": "Bảo Mật Tuyệt Đối",
-        "desc": "Dữ liệu được mã hóa end-to-end"
-    },
-    {
-        "icon": "#",
-        "title": "Đa Nền Tảng",
-        "desc": "Hoạt động mượt mà trên mọi thiết bị"
-    },
-    {
-        "icon": "#",
-        "title": "Luôn sử dụng AI",
-        "desc": "Tích hợp trí tuệ nhân tạo tiên tiến"
-    }
-]
-
-cols = st.columns(4)
-for i, feature in enumerate(features_data):
-    with cols[i]:
-        st.markdown(f"""
-        <div class="feature-card">
-            <h3 style='color: #1f77b4;'>{feature['icon']} {feature['title']}</h3>
-            <p>{feature['desc']}</p>
-        </div>
-        """, unsafe_allow_html=True)
-
-st.markdown("---")
-about_col1, about_col2 = st.columns([2, 1])
-
-with about_col1:
-    st.markdown("""
-    abc
+with left:
+    st.info("""
+    Project sử dụng CNN để nhận diện 53 lá bài khác nhau.
+    
+    Người dùng có thể upload ảnh và AI sẽ dự đoán kết quả.
     """)
 
-with about_col2:
-    st.markdown("""
-    ###  Thành Tựu
-    - Top 1% hiệu suất
-    - ⭐⭐⭐⭐⭐ đánh giá
-    - Giải thưởng công nghệ 2024
-    """)
+with right:
+    if st.button("Test AI"):
+        with st.spinner("AI đang phân tích..."):
+            time.sleep(2)
+        st.success("Hoàn thành")
 
 st.markdown("---")
-st.markdown("""
-<div style='text-align: center; padding: 2rem; background-color: #f0f2f6; border-radius: 10px;'>
-    <h3> Liên Hệ Với Chúng Tôi</h3>
-    <p><strong>Email:</strong> @dungdeptrai1234| <strong>Hotline:</strong> 888889999</p>
-    <p>nap vip : htpps://dungdeptraiii</p>
-</div>
-""", unsafe_allow_html=True)
+st.subheader("Tổng quan")
+
+c1, c2, c3 = st.columns(3)
+
+with c1:
+    st.markdown("""
+    <div class='metric-box'>
+        <h2>96%</h2>
+        <p>Accuracy</p>
+    </div>
+    """, unsafe_allow_html=True)
+
+with c2:
+    st.markdown("""
+    <div class='metric-box'>
+        <h2>53</h2>
+        <p>Classes</p>
+    </div>
+    """, unsafe_allow_html=True)
+
+with c3:
+    st.markdown("""
+    <div class='metric-box'>
+        <h2>CNN</h2>
+        <p>Model</p>
+    </div>
+    """, unsafe_allow_html=True)
+
+st.markdown("---")
+st.subheader("Thông tin về sản phẩm")
+
+info1, info2 = st.columns(2)
+
+with info1:
+    st.markdown("""
+    <div class='box'>
+    
+    ### Công nghệ sử dụng
+    - TensorFlow
+    - CNN
+    - Streamlit
+    - Python
+    
+    </div>
+    """, unsafe_allow_html=True)
+
+with info2:
+    st.markdown("""
+    <div class='box'>
+    
+    ### Chức năng chính
+    - Upload ảnh lá bài
+    - AI predict kết quả
+    - Hiển thị độ chính xác
+    - Phân tích bằng AI
+    
+    </div>
+    """, unsafe_allow_html=True)
+
+st.markdown("---")
+st.subheader("Cách hoạt động")
+
+f1, f2, f3, f4 = st.columns(4)
+
+with f1:
+    st.markdown("""
+    <div class='box'>
+    <h3>📤</h3>
+    Upload ảnh
+    </div>
+    """, unsafe_allow_html=True)
+
+with f2:
+    st.markdown("""
+    <div class='box'>
+    <h3>🧠</h3>
+    CNN xử lý
+    </div>
+    """, unsafe_allow_html=True)
+
+with f3:
+    st.markdown("""
+    <div class='box'>
+    <h3>🎯</h3>
+    Predict kết quả
+    </div>
+    """, unsafe_allow_html=True)
+
+with f4:
+    st.markdown("""
+    <div class='box'>
+    <h3>📊</h3>
+    Hiển thị thông tin
+    </div>
+    """, unsafe_allow_html=True)
+
+st.markdown("---")
+
+st.markdown(""" <div style='text-align: center; padding: 2rem; background-color: #f0f2f6; border-radius: 10px;'> <h3> Liên Hệ Với Chúng Tôi</h3> <p><strong>Email:</strong> @dungdeptrai1234| <strong>Hotline:</strong> 888889999</p> <p>nap vip : htpps://dungdeptraiii</p> </div> """, unsafe_allow_html=True)
 
 with st.sidebar:
-    st.title("Trang chủ")
-    st.markdown("Tìm kiếm")
-    
-    page_options = ["Trang Chủ", "Dashboard", "Phân Tích", "Cài Đặt"]
-    selected_page = st.selectbox("Đi đến:", page_options, index=0)
-    
-    if st.button("Refresh", type="secondary"):
-        st.rerun()
-    
+    st.title("Menu")
+
+    page = st.radio(
+        "Điều hướng",
+        [
+            "Trang chủ",
+            "Dự đoán",
+            "Phân tích",
+            "Giới thiệu"
+        ]
+    )
+
     st.markdown("---")
-    st.markdown("Thông tin về web")
-    st.info("web vippp proo")
+
+    st.info("Nhận dạng lá bài bằng CNN")
