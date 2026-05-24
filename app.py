@@ -4,7 +4,6 @@ import pandas as pd
 from PIL import Image
 import time
 
-# Cấu hình trang
 st.set_page_config(
     page_title="web của dũng",
     page_icon="#",
@@ -12,7 +11,6 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# Custom CSS
 st.markdown("""
     <style>
     .main-header {
@@ -59,7 +57,6 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-# Header
 col1, col2, col3 = st.columns([1, 2, 1])
 with col2:
     st.markdown('<h1 class="main-header">Trang chủ</h1>', unsafe_allow_html=True)
@@ -73,7 +70,6 @@ with banner_col2:
     if st.button("hello world", type="primary", use_container_width=True):
         st.balloons()
 
-# Metrics Section
 st.markdown("---")
 st.markdown("<h2 style='text-align: center; color: #2E86AB;'>abc</h2>", unsafe_allow_html=True)
 
@@ -110,7 +106,6 @@ with col4:
     </div>
     """, unsafe_allow_html=True)
 
-# Features Section
 st.markdown("---")
 st.markdown("<h2 style='text-align: center; color: #2E86AB;'>tinh lang</h2>", unsafe_allow_html=True)
 
@@ -147,7 +142,6 @@ for i, feature in enumerate(features_data):
         </div>
         """, unsafe_allow_html=True)
 
-# About Section
 st.markdown("---")
 about_col1, about_col2 = st.columns([2, 1])
 
@@ -164,7 +158,6 @@ with about_col2:
     - Giải thưởng công nghệ 2024
     """)
 
-# Footer
 st.markdown("---")
 st.markdown("""
 <div style='text-align: center; padding: 2rem; background-color: #f0f2f6; border-radius: 10px;'>
@@ -174,7 +167,6 @@ st.markdown("""
 </div>
 """, unsafe_allow_html=True)
 
-# Sidebar
 with st.sidebar:
     st.title("Trang chủ")
     st.markdown("Tìm kiếm")
