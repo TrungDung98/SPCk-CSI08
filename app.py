@@ -5,8 +5,8 @@ from PIL import Image
 import time
 
 st.set_page_config(
-    page_title="Card AI",
-    page_icon="🃏",
+    page_title="web của dũng",
+    page_icon="#",
     layout="wide"
 )
 
