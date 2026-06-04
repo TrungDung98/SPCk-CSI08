@@ -1,0 +1,12 @@
+dataset/
+temp.jpg
+*.keras
+*.h5
+*.pkl
+__pycache__/
+*.pyc
+.streamlit/
+
+.venv/
+venv/
+env/

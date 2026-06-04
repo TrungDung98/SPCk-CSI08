@@ -39,6 +39,9 @@ card-project/
 ├── predict.py
 ├── requirements.txt
 ├── README.md
-├── cards_model.h5
+├── cards_model.keras
 ├── dataset/
 └── pages/
+    ├── Predict.py      
+    ├── Analytics.py    
+    └── About.py

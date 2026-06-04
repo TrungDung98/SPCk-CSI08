@@ -44,9 +44,9 @@ model.compile(
 history = model.fit(
     train_data,
     validation_data=valid_data,
-    epochs=10
+    epochs=5
 )
 
-model.save("cards_model.h5")
+model.save("cards_model.keras")
 
 print("Training Complete")

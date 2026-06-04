@@ -18,6 +18,9 @@ st.markdown("""
     color: #1f2937;
     text-align: center;
     margin-bottom: 10px;
+    background: linear-gradient(90deg, #1f77b4, #9333ea);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .sub-text{
@@ -49,7 +52,7 @@ st.markdown("""
 
 # HEADER
 st.markdown(
-    "<div class='main-header'>🃏 Nhận diện lá bài bằng AI</div>",
+    "<div class='main-header'>Nhận diện lá bài bằng AI</div>",
     unsafe_allow_html=True
 )
 
@@ -175,18 +178,20 @@ st.markdown("---")
 st.markdown(""" <div style='text-align: center; padding: 2rem; background-color: #f0f2f6; border-radius: 10px;'> <h3> Liên Hệ Với Chúng Tôi</h3> <p><strong>Email:</strong> @dungdeptrai1234| <strong>Hotline:</strong> 888889999</p> <p>nap vip : htpps://dungdeptraiii</p> </div> """, unsafe_allow_html=True)
 
 with st.sidebar:
-    st.title("Menu")
 
-    page = st.radio(
-        "Điều hướng",
-        [
-            "Trang chủ",
-            "Dự đoán",
-            "Phân tích",
-            "Giới thiệu"
-        ]
-    )
+    st.title("Card AI")
 
     st.markdown("---")
 
-    st.info("Nhận dạng lá bài bằng CNN")
+    st.markdown("""
+    ### Thông tin dự án
+
+    - Dataset: Playing Cards
+    - Model: CNN
+    - Framework: TensorFlow
+    - Frontend: Streamlit
+    """)
+
+    st.markdown("---")
+
+    st.success("Chọn trang ở menu phía trên")
