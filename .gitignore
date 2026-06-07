@@ -1,6 +1,5 @@
 dataset/
 temp.jpg
-*.keras
 *.h5
 *.pkl
 __pycache__/
